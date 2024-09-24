@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      table {
+        border-spacing: 0;
+      }
+      td {
+        padding: 0;
+      }
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        background-color: #fff;
+        padding-bottom: 60px;
+      }
+      .main {
+        background-color: #fff;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 900px;
+        border-spacing: 0;
+        color: #171a1b;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .two-columns .column {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .two-columns .date {
+        padding: 18px 16px;
+      }
+      .two-columns .date p,
+      .view p,
+      .POC-title p {
+        font-size: 9px;
+        color: #554d56;
+        font-weight: 500;
+      }
+      .view{
+        padding: 0 15px;
+        text-decoration: underline;
+      }
+      .inner-two-columns .inner-column {
+        width: 100%;
+        max-width: 410px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .padding {
+        padding: 3px 2px;
+      }
+      .box-shadow {
+        width: 900px;
+        padding: 8px 17px 18px;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 6px 0 rgba(105, 105, 105, 0.12),
+          0 -1px 6px 0 rgba(105, 105, 105, 0.12);
+      }
+      .summary-report h4 {
+        font-size: 14px;
+        padding: 0 13px;
+      }
+      .inner-table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .inner-table td,
+      .inner-table th {
+        border-bottom: 1px solid #dddddd;
+        text-align: left;
+        width: 96px;
+        padding: 6px 12px;
+        font-size: 10px;
+      }
+      .name-padding {
+        padding: 2.5px 77.5px 2.5px 0;
+      }
+      .name-padding p {
+        margin: 0;
+        font-size: 8px;
+        padding-top: 5px;
+        color: #d3d3d3;
+      }
+      .table-title {
+        padding-bottom: 16px;
+      }
+      .POC-title h5,
+      .POC-title p {
+        padding: 0;
+        margin: 0;
+      }
+      .POC-title h5 {
+        padding-bottom: 6px;
+      }
+      .back {
+        background-color: rgba(240, 242, 244, 0.5);
+        padding: 5px;
+        height: 36px;
+      }
+      .primary-color {
+        color: #8f68fd;
+        font-weight: 600;
+      }
+      .secondary-color {
+        color: #1eaab2;
+        font-weight: 600;
+      }
+      .danger-color {
+        color: #f69731;
+        font-weight: 600;
+      }
+      .remove-border td{
+        border: none;
+      }
+      .color-red{
+        background-color: rgba(255, 17, 17, 0.1);
+        color: #ff1111;
+      }
+      .poc-headings span{
+        color: #000;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <center class="wrapper">
+      <table class="main" width="100%">
+        <tr>
+          <td height="8" style="background-color: #f6911d"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td class="two-columns">
+                  <table class="column padding">
+                    <tr>
+                      <td class="summary-report">
+                        <h4>Weekly Summary Report for vPro</h4>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table align="right" class="column date">
+                    <tr>
+                      <td>
+                        <p>
+                          Report generated on:
+                          <span><b> 1 Dec 2022, 02:33 PM</b></span>
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <table class="box-shadow" width="100%">
+              <tr>
+                <td class="two-columns table-title">
+                  <table class="column padding">
+                    <tr>
+                      <td class="POC-title">
+                        <h5>POC Tasks</h5>
+                        <p>Active Requests that are assigned to you</p>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table align="right" class="column view">
+                    <tr>
+                      <td>
+                        <p>View All</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table class="inner-table">
+                    <tr class="back">
+                      <th>Client Name</th>
+                      <th>AdType</th>
+                      <th>Task</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Due Date</th>
+                      <th>status</th>
+                    </tr>
+                    <tr>
+                      <td class="name-padding">
+                        Alfreds Futterkiste
+                        <p>Title of task here</p>
+                      </td>
+                      <td class="name-padding">Sync Test</td>
+                      <td>Sales</td>
+                      <td>03/12/2022</td>
+                      <td>07/12/2022</td>
+                      <td>04/12/2022</td>
+                      <td class="primary-color">Needs Scheduling</td>
+                    </tr>
+                    <tr>
+                      <td class="name-padding">
+                        Susie Carlson
+                        <p>Title of task here</p>
+                      </td>
+                      <td class="name-padding">Commercial</td>
+                      <td>Producer</td>
+                      <td>03/12/2022</td>
+                      <td>07/12/2022</td>
+                      <td>04/12/2022</td>
+                      <td class="secondary-color">Needs Debugging</td>
+                    </tr>
+                    <tr>
+                      <td class="name-padding">
+                        Markus Benes
+                        <p>Title of task here</p>
+                      </td>
+                      <td class="name-padding">Commercial</td>
+                      <td>Producer</td>
+                      <td>03/12/2022</td>
+                      <td>07/12/2022</td>
+                      <td>04/12/2022</td>
+                      <td class="danger-color">Needs Revision</td>
+                    </tr>
+                    <tr>
+                      <td class="name-padding">
+                        Marie Stephens
+                        <p>Title of task here</p>
+                      </td>
+                      <td class="name-padding">Commercial/Streaming</td>
+                      <td>Dubber</td>
+                      <td>03/12/2022</td>
+                      <td>07/12/2022</td>
+                      <td>04/12/2022</td>
+                      <td class="secondary-color">Needs Debugging</td>
+                    </tr>
+                    <tr>
+                      <td class="name-padding">
+                        Jacob Gibson
+                        <p>Title of task here</p>
+                      </td>
+                      <td class="name-padding">Commercial/Streaming</td>
+                      <td>Sales</td>
+                      <td>03/12/2022</td>
+                      <td>07/12/2022</td>
+                      <td>04/12/2022</td>
+                      <td class="danger-color">Needs Revision</td>
+                    </tr>
+                    <tr  class="remove-border">
+                      <td class="name-padding">
+                        Eliza Figueroa
+                        <p>Title of task here</p>
+                      </td>
+                      <td>Commercial</td>
+                      <td>Sales</td>
+                      <td>03/12/2022</td>
+                      <td>07/12/2022</td>
+                      <td>04/12/2022</td>
+                      <td class="secondary-color">Needs Debugging</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <table class="box-shadow" width="100%">
+                <tr>
+                  <td class="two-columns table-title">
+                    <table class="column padding">
+                      <tr>
+                        <td class="POC-title">
+                          <h5>Custom Task Due Dates</h5>
+                          <p>Requests based on per-task due dates</p>
+                        </td>
+                      </tr>
+                    </table>
+  
+                    <table align="right" class="column view">
+                      <tr>
+                        <td>
+                          <p>View All</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table class="inner-table">
+                      <tr class="back">
+                        <th>Client Name</th>
+                        <th>AdType</th>
+                        <th>Task</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Due Date</th>
+                        <th style="padding:2px">Job Completion Date</th>
+                        <th>status</th>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Alfreds Futterkiste
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Sync Test</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="name-padding">04/12/2022</td>
+                        <td class="primary-color">Needs Scheduling</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Susie Carlson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="name-padding">04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Markus Benes
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="name-padding">04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Marie Stephens
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td>Dubber</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="name-padding">04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Jacob Gibson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="name-padding">04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr class="remove-border">
+                        <td class="name-padding">
+                          Eliza Figueroa
+                          <p>Title of task here</p>
+                        </td>
+                        <td>Commercial</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="name-padding">04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table class="box-shadow" width="100%">
+                <tr>
+                  <td class="two-columns table-title">
+                    <table class="column padding">
+                      <tr>
+                        <td class="POC-title">
+                          <h5>Past Due</h5>
+                          <p>Requests where the due date has gone past due and status is not yet archived.</p>
+                        </td>
+                      </tr>
+                    </table>
+  
+                    <table align="right" class="column view">
+                      <tr>
+                        <td>
+                          <p>View All</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table class="inner-table">
+                      <tr class="back">
+                        <th>Client Name</th>
+                        <th>AdType</th>
+                        <th>Task</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th class="color-red">Due Date</th>
+                        <th>status</th>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Alfreds Futterkiste
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Sync Test</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td class="color-red">04/12/2022</td>
+                        <td class="primary-color">Needs Scheduling</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Susie Carlson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td class="color-red">04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Markus Benes
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td class="color-red">04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Marie Stephens
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td>Dubber</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td class="color-red">04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Jacob Gibson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td class="color-red">04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr class="remove-border">
+                        <td class="name-padding">
+                          Eliza Figueroa
+                          <p>Title of task here</p>
+                        </td>
+                        <td>Commercial</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td class="color-red">04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table class="box-shadow" width="100%">
+                <tr>
+                  <td class="two-columns table-title">
+                    <table class="column padding">
+                      <tr>
+                        <td class="POC-title">
+                          <h5>Due Date Approaching</h5>
+                          <p>Requests where the due date is approaching within the next 7 days.</p>
+                        </td>
+                      </tr>
+                    </table>
+  
+                    <table align="right" class="column view">
+                      <tr>
+                        <td>
+                          <p>View All</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table class="inner-table">
+                      <tr class="back">
+                        <th>Client Name</th>
+                        <th>AdType</th>
+                        <th>Task</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Due Date</th>
+                        <th>status</th>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Alfreds Futterkiste
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Sync Test</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="primary-color">Needs Scheduling</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Susie Carlson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Markus Benes
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Marie Stephens
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td>Dubber</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Jacob Gibson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr  class="remove-border">
+                        <td class="name-padding">
+                          Eliza Figueroa
+                          <p>Title of task here</p>
+                        </td>
+                        <td>Commercial</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table class="box-shadow">
+                <tr>
+                  <td class="two-columns table-title">
+                    <table class="column padding">
+                      <tr>
+                        <td class="POC-title">
+                          <h5>Starting Soon</h5>
+                          <p>Requests where the start date is approaching within the next 7 days.</p>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <table align="right" class="column view">
+                      <tr>
+                        <td>
+                          <p>View All</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table class="inner-table">
+                      <tr class="back">
+                        <th>Client Name</th>
+                        <th>AdType</th>
+                        <th>Task</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Due Date</th>
+                        <th>status</th>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Alfreds Futterkiste
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Sync Test</td>
+                        <td>Sales</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="primary-color">Needs Scheduling</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Susie Carlson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Markus Benes
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td>Producer</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr class="remove-border">
+                        <td class="name-padding">
+                          Marie Stephens
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td>Dubber</td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table class="box-shadow">
+                <tr>
+                  <td class="two-columns table-title">
+                    <table class="column padding">
+                      <tr>
+                        <td class="POC-title">
+                          <h5>Ending Soon</h5>
+                          <p>Requests where the end date is approaching within the next 7 days.</p>
+                        </td>
+                      </tr>
+                    </table>
+  
+                    <table align="right" class="column view">
+                      <tr>
+                        <td>
+                          <p>View All</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table class="inner-table">
+                      <tr class="back">
+                        <th>Client Name</th>
+                        <th>AdType</th>
+                        <th>POC</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Due Date</th>
+                        <th>status</th>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Alfreds Futterkiste
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Sync Test</td>
+                        <td class="poc-headings"><span>Sales:</span>Faisal Ali
+                            <span>Writer:</span>Luis Garcia
+                            <span>Dubber:</span>Jun Kim
+                        </td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="primary-color">Needs Scheduling</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Susie Carlson
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td class="poc-headings">
+                            <span>Producer:</span>Luis Garcia
+                        </td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                      <tr>
+                        <td class="name-padding">
+                          Markus Benes
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial</td>
+                        <td class="poc-headings">
+                            <span>Producer:</span>Luis Garcia
+                        </td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="danger-color">Needs Revision</td>
+                      </tr>
+                      <tr class="remove-border">
+                        <td class="name-padding">
+                          Marie Stephens
+                          <p>Title of task here</p>
+                        </td>
+                        <td class="name-padding">Commercial/Streaming</td>
+                        <td class="poc-headings">
+                            <span>Dubber:</span>Luis Garcia
+                        </td>
+                        <td>03/12/2022</td>
+                        <td>07/12/2022</td>
+                        <td>04/12/2022</td>
+                        <td class="secondary-color">Needs Debugging</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+      </table>
+    </center>
+  </body>
+</html>
